@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1717975134
+darkPurple.png::CompressedTexture2D::6423740068913883914::1717023217::1717023217::1::::<><>::
+icon.svg::CompressedTexture2D::199227606765077643::1717023023::1717023028::1::::<><>::
+level.gd::GDScript::-1::1717974200::0::1::::<>Node2D<>::
+level_1.tscn::PackedScene::1918593620157591081::1717974534::0::1::::<><>::uid://drj0tah57h6bp::::res://purple.png<>res://level.gd<>uid://hv5njo6j6ccb::::res://player.tscn<>uid://d2bisrvbspiqb::::res://maze.tscn
+maze.tscn::PackedScene::9056944012700591161::1717974407::0::1::::<><>::uid://cxrycb3sr70cs::::res://darkPurple.png
+player.gd::GDScript::-1::1717971181::0::1::::<>RigidBody2D<>::
+player.tscn::PackedScene::536519059164398645::1717974407::0::1::::<><>::res://player.gd<>uid://diqxly1xtr2bu::::res://ufoGreen.png
+purple.png::CompressedTexture2D::8372603659835513701::1717023217::1717023217::1::::<><>::
+ufoGreen.png::CompressedTexture2D::7755220280611524026::1717023217::1717023217::1::::<><>::

@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://2lm7r30w4dqv"]
+
+[ext_resource type="Texture2D" uid="uid://drj0tah57h6bp" path="res://purple.png" id="1_5qsrs"]
+[ext_resource type="Script" path="res://level.gd" id="1_rhkof"]
+[ext_resource type="PackedScene" uid="uid://hv5njo6j6ccb" path="res://player.tscn" id="2_at6c0"]
+[ext_resource type="PackedScene" uid="uid://d2bisrvbspiqb" path="res://maze.tscn" id="4_l10ki"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rskp6"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_nr2i2"]
+font_size = 24
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_rhkof")
+
+[node name="Graphics" type="Node" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Graphics"]
+layer = -10
+
+[node name="Background" type="TextureRect" parent="Graphics/CanvasLayer"]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5qsrs")
+stretch_mode = 1
+
+[node name="StartLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 529.0
+offset_top = 216.0
+offset_right = 606.0
+offset_bottom = 261.0
+text = "Start"
+label_settings = SubResource("LabelSettings_rskp6")
+
+[node name="EndLabel" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 1004.0
+offset_top = 237.0
+offset_right = 1081.0
+offset_bottom = 282.0
+text = "End"
+label_settings = SubResource("LabelSettings_rskp6")
+
+[node name="Tutorial" type="Label" parent="Graphics"]
+z_index = -25
+offset_left = 28.0
+offset_top = 448.0
+offset_right = 436.0
+offset_bottom = 637.0
+text = "Rules:
+- Use arrow keys or WASD to move
+- Go from the start to the end
+- You will go back to the start if you
+ go outside the maze!"
+label_settings = SubResource("LabelSettings_nr2i2")
+
+[node name="Player" parent="." instance=ExtResource("2_at6c0")]
+position = Vector2(569, 322)
+
+[node name="Maze" parent="." instance=ExtResource("4_l10ki")]
+z_index = -50
+position = Vector2(571, 615)
+
+[connection signal="body_exited" from="Maze" to="." method="_on_maze_body_exited"]
